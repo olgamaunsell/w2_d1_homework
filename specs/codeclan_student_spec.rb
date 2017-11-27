@@ -33,7 +33,9 @@ class TestStudent < MiniTest::Test
   end
 
   def test_favourite_language
+    student2 = Student.new("Richard", 18)
 
+    assert_equal("I love Ruby", student2.favourite_language("Ruby"))
   end
 #   Create a Class called Student that takes in a name (String) and a cohort (integer) when an new instance is created.
 # Create a couple of Getter methods, one that returns the name property and one that returns the cohort property of the student.
