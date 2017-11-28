@@ -2,7 +2,8 @@ class Student
 
   def initialize(student_name, cohort)
     @student_name = student_name
-    @cohort = cohort
+    # add .to_i() so that it handles if 18 or "18" passed
+    @cohort = cohort.to_i()
   end
 
   def student_name

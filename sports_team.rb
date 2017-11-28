@@ -1,8 +1,9 @@
 class SportsTeam
 
-  attr_accessor :team_name, :players, :coach_name, :points
+  attr_reader :team_name, :players,  :points
+  attr_accessor :coach_name
 
-  def initialize(team_name, players, coach_name, points)
+  def initialize(team_name, players, coach_name)
     @team_name = team_name
     @players = players
     @coach_name = coach_name
@@ -13,12 +14,8 @@ class SportsTeam
     @players.push(new_player)
   end
 
-  def check_if_player_exists(player)
-    if @players.include?(player)
-      return true
-    else
-      return false
-    end
+  def check_if_player_exists?(player)
+    return @players.include?(player)
   end
 
   def update_points_if_won(won)
